@@ -1,0 +1,148 @@
+.landingPageContainer{
+  width: 100vw;
+  height: 100vh;
+  background : url("/lB.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #555555;
+
+}
+.landingPageContainer nav {
+  padding-inline: 1.2rem;
+  padding-block: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  
+}
+.landingPageContainer nav h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+
+}
+.landingPageContainer nav .navlist{
+ font-size: 0.9rem;
+  font-weight: 400;
+  display: flex;
+  cursor: pointer;
+  gap: 1.6rem;
+}
+
+.landingMainContainer{
+
+ display: flex;
+ justify-content: space-between ;
+ padding-inline: 3rem;
+ height: 70vh;
+ align-items: center;
+ 
+}
+
+
+.landingMainContainer img {
+  height: 70vh;
+  border-radius: 2%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add a subtle box-shadow */
+  transition: transform 0.3s ease; /* Add a transition for hover effect */
+}
+
+.landingMainContainer img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+}
+
+.landingMainContainer > div:nth-child(1) div[role=button]{
+  margin-top: 1.9rem;
+  background: #4895ef ;
+  border-radius: 20px;
+  width: fit-content;
+  padding: 1rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role=button] a {
+  text-decoration: none;
+  font-size: 1.2rem;
+} 
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  padding-block: 1.6rem;
+  background : url("/lB.jpg");
+  color: white;
+  align-items: center;
+}
+.meetContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  padding-block: 1.6rem;
+  background : url("/lB.jpg");
+  color: white;
+  align-items: center;
+}
+
+.landingImages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+
+.responsiveImage {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+ 
+  .videoJoin {
+    display: none;
+  }
+}
+
+.meetContainer{
+  display: flex;
+  justify-content: center;
+  padding-inline: 3rem;
+  height: 80vh;
+  align-items: center;
+}
+.meetContainer img {
+  height: 70vh;
+  border-radius: 2%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; 
+}
+
+.leftPanel{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.rightPanel{
+
+  display: flex;
+  align-items: center;
+}
+.rightPanel > img {
+  width: 30vw;
+  height: auto;
+  border-radius: 20px;
+}
+.createCode {
+  display: flex;
+  margin-top: 2rem;
+  gap: 1.6rem;
+  align-items: center;
+  
+}
+
+.lobby {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  height: 100vh; /* Ensure the lobby takes the full viewport height */
+}
