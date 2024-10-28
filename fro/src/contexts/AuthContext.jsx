@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
             if (request.status === httpStatus.CREATED) {
                 console.log(request.data);
                 localStorage.setItem('token', request.data.token); // Ensure token is set
+                console.log( "Token:",request.data.token);
                 return request.data.message; // Return success message
             } else {
                 throw new Error('Registration failed'); // Throw error if not created
