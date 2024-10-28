@@ -14,7 +14,7 @@ const register = async (req, res) => {
         if (existingUser) {
             return res.status(httpStatus.CONFLICT).json({ message: "User already exists" });
         }
-        const hashedPassword = await bcrypt.hash(password, 10); // Updated usage
+        const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new User({
             name: name,
             username: username,
@@ -22,7 +22,13 @@ const register = async (req, res) => {
         });
         // Saving new user in db
         await newUser.save();
-        res.status(httpStatus.CREATED).json({ message: "User Registered" });
+
+        // Generate a token for the new user
+        const token = crypto.randomBytes(20).toString("hex");
+        newUser.token = token; // Store the token in the user document
+        await newUser.save(); // Save the user again to include the token
+
+        res.status(httpStatus.CREATED).json({ token: token, message: "User Registered" });
     } catch (error) {
         console.log(error);
         res.status(httpStatus.INTERNAL_SERVER_ERROR).json({ message: "Error registering user" });
