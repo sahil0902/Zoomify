@@ -95,7 +95,7 @@ const login = async (req,res)=>
     }
   };
 
-const addToHistory = async (req, res) => {
+  const addToHistory = async (req, res) => {
     const { token, meetingCode } = req.body;
     console.log('Received request to add to history:', { token, meetingCode });
 
@@ -104,6 +104,12 @@ const addToHistory = async (req, res) => {
         if (!user) {
             console.log('User not found for token:', token);
             return res.status(httpStatus.NOT_FOUND).json({ message: "User not found" });
+        }
+
+        // Check if the meetingCode already exists
+        const existingMeeting = await Meeting.findOne({ meetingCode });
+        if (existingMeeting) {
+            return res.status(httpStatus.CONFLICT).json({ message: "Meeting code already exists" });
         }
 
         const newMeeting = new Meeting({
