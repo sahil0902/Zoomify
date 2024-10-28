@@ -12,16 +12,16 @@ const client = axios.create({
 export const AuthProvider = ({ children }) => {
     const authContext = useContext(AuthContext);
     const [userData, setUserData] = useState(authContext);
-    const navigate = useNavigate();  // Use useNavigate for programmatic navigation
+    const navigate = useNavigate();  
 
     const handleRegister = async (name, username, password) => {
         try {
             let request = await client.post('/register', { name, username, password });
             if (request.status === httpStatus.CREATED) {
-                console.log(request.data);
-                localStorage.setItem('token', request.data.token); // Ensure token is set
-                console.log( "Token:",request.data.token);
-                return request.data.message; // Return success message
+                // console.log(request.data);
+                 localStorage.setItem('token', request.data.token); //  sets the token
+               // console.log( "Token:",request.data.token);
+                return request.data; // Return success message
             } else {
                 throw new Error('Registration failed'); // Throw error if not created
             }

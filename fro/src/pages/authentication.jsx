@@ -62,7 +62,7 @@ export default function Authentication() {
         ? await handleLogin(username, password)
         : await handleRegister(name, username, password);
 
-      console.log('Response:', response); // Log the response
+      // console.log('Response:', response); // Log the response
       if (formState === 0) { // Only set message for login
         setMessage('User logged in');
       }
