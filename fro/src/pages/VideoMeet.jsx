@@ -12,7 +12,8 @@ import MicIcon from "@mui/icons-material/Mic";
 import StopScreenShareIcon from "@mui/icons-material/StopScreenShare";
 import ScreenShareIcon from "@mui/icons-material/ScreenShare";
 import ChatIcon from "@mui/icons-material/Chat";
-const server_url = "http://localhost:8000";
+import server from "../environment";
+const server_url = `${server}`;
 
 const peerConfigConnections = {
   iceServers: [
