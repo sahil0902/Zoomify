@@ -18,6 +18,7 @@ export const AuthProvider = ({ children }) => {
         try {
             let request = await client.post('/register', { name, username, password });
             if (request.status === httpStatus.CREATED) {
+                console.log(request.data);
                 localStorage.setItem('token', request.data.token); // Ensure token is set
                 return request.data.message; // Return success message
             } else {
