@@ -106,11 +106,11 @@ const login = async (req,res)=>
             return res.status(httpStatus.NOT_FOUND).json({ message: "User not found" });
         }
 
-        // Check if the meetingCode already exists
-        const existingMeeting = await Meeting.findOne({ meetingCode });
-        if (existingMeeting) {
-            return res.status(httpStatus.CONFLICT).json({ message: "Meeting code already exists" });
-        }
+        // // Check if the meetingCode already exists
+        // const existingMeeting = await Meeting.findOne({ meetingCode });
+        // if (existingMeeting) {
+        //     return res.status(httpStatus.CONFLICT).json({ message: "Meeting code already exists" });
+        // }
 
         const newMeeting = new Meeting({
             user_id: user.username,
