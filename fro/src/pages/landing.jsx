@@ -1,7 +1,7 @@
 import React from 'react';
 import "../App.css";
 import { Link } from 'react-router-dom';
-import './Landing.css';
+import styles from "../styles/Landing.css";
 
 export default function LandingPage() {
   return (
@@ -9,8 +9,8 @@ export default function LandingPage() {
       <nav>
         <div className='navHeader'><h2>Zoomify</h2></div>
         <div className='navlist'>
-          <div className="comingSoon">
-            <p className="glowingText">Coming Soon</p>
+          <div className={styles.comingSoon}>
+            <p className={styles.glowingText}>Coming Soon</p>
           </div>
           <Link to="/auth" style={{ textDecoration: 'none', color: 'inherit' }}>
             <p>Join as Guest</p>
