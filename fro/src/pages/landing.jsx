@@ -1,7 +1,8 @@
+// LandingPage.jsx
 import React from 'react';
 import "../App.css";
 import { Link } from 'react-router-dom';
-import styles from "../styles/Landing.css";
+import "../styles/Landing.css";
 
 export default function LandingPage() {
   return (
@@ -9,12 +10,15 @@ export default function LandingPage() {
       <nav>
         <div className='navHeader'><h2>Zoomify</h2></div>
         <div className='navlist'>
-          <div className={styles.comingSoon}>
-            <p className={styles.glowingText}>Coming Soon</p>
+          <div className="guestWrapper">
+            <div className="crossLine"></div>
+            <Link to="/auth" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <p>Join as Guest</p>
+            </Link>
+            <div className="comingSoon">
+              <p className="glowingText">Coming Soon</p>
+            </div>
           </div>
-          <Link to="/auth" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <p>Join as Guest</p>
-          </Link>
           <Link to="/auth" style={{ textDecoration: 'none', color: 'inherit' }}>
             <p>Register</p>
           </Link>
@@ -25,6 +29,7 @@ export default function LandingPage() {
           </Link>
         </div>
       </nav>
+
 
       <div className="landingMainContainer">
         <div>

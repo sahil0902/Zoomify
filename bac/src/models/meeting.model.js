@@ -6,7 +6,6 @@ const meetingSchema = new Schema({
     },
     meetingCode:{
         type:String,
-        unique:true,
         required:true
     },
     date :{
