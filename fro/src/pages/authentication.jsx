@@ -198,6 +198,7 @@ export default function Authentication() {
               </Button>
               
               <Copyright sx={{ mt: 5 }} />
+              <p>It can take upto 90 seconds to confrim your details</p>
             </Box>
           </Box>
         </Grid>
